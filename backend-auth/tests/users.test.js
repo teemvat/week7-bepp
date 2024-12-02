@@ -6,7 +6,7 @@ const User = require("../models/userModel");
 
 beforeAll(async () => {
     await User.deleteMany({});
-    }
+}
 );
 
 describe("User routes", () => {
@@ -22,7 +22,7 @@ describe("User routes", () => {
                 membership_status: "Active",
             };
 
-            const result = await api.post("/api/users/signup").send(userData); 
+            const result = await api.post("/api/users/signup").send(userData);
 
             expect(result.status).toBe(201);
             expect(result.body).toHaveProperty("token");
